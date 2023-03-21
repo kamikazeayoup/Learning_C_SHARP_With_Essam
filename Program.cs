@@ -11,7 +11,6 @@ using System.Collections.Generic;
 
         //define array of employees
         Employee[] employees = new Employee[NumberOfEmployees];
-
         //take the input
         for (int index = 0; index < NumberOfEmployees; index++)
         {
@@ -23,7 +22,7 @@ using System.Collections.Generic;
 
             Console.Write("What is your last name ? ");
             employee.LastName = Console.ReadLine();
-
+            
             Console.Write("what is your wage ?");
             employee.Wage = Convert.ToDouble(Console.ReadLine());
 
@@ -31,17 +30,13 @@ using System.Collections.Generic;
             employee.Hours = Convert.ToInt32(Console.ReadLine());
 
             employees[index] = employee;
+            Console.WriteLine("\n---------------------------------------------------------\n\n\n");
+
 
         }
         for (int index = 0; index< NumberOfEmployees; index++)
         {
-            Console.WriteLine($"Your first name is : {employees[index].FirstName}");
-            Console.WriteLine($"Your Last name is : {employees[index].LastName}");
-            Console.WriteLine($"Your Wage is : {employees[index].Wage}");
-            Console.WriteLine($"Your Total Hours is : {employees[index].Hours}");
-
-            double SalaryAfterTax = (employees[index].Wage * employees[index].Hours) - (employees[index].Wage * employees[index].Hours * Employee.TAX);
-            Console.WriteLine($"The salary After tax = {SalaryAfterTax}");
+             Employee.printvalues(employees[index]);
 
         }
 
