@@ -5,10 +5,26 @@ using System.Collections.Generic;
     {
     static void Main(string[] args)
     {
-        Dollar dlr = new Dollar
+        //this for applying the delegate topic and show the imprtance of it and show the history of lambda expression.
+        var emps = new Employee[]
         {
-            Price = -1
+            new Employee {Id = 1 , Name = "Ahmed" , Gender = "Male" , TotalSales = 30000m} ,
+            new Employee {Id = 2 , Name = "Mohamed" , Gender = "Male" , TotalSales = 40000m} ,
+            new Employee {Id = 3 , Name = "Ali" , Gender = "Male" , TotalSales = 20000m} ,
+            new Employee {Id = 4 , Name = "Mamdouh" , Gender = "Male" , TotalSales = 70000m} ,
+            new Employee {Id = 5 , Name = "Samir" , Gender = "Male" , TotalSales = 60000m} ,
+            new Employee {Id = 6 , Name = "Somia" , Gender = "Famle" , TotalSales = 10000m} ,
+            new Employee {Id = 7 , Name = "Hams" , Gender = "Famle" , TotalSales = 90000m} ,
+            new Employee {Id = 8 , Name = "Mona" , Gender = "Famle" , TotalSales = 40000m} ,
+            new Employee {Id = 9 , Name = "Nadia" , Gender = "Famle" , TotalSales = 20000m} ,
+            new Employee {Id = 10 , Name = "injy" , Gender = "Famle" , TotalSales = 50000m} ,
         };
-        Console.WriteLine($"Your Value = {dlr.Price} your total = {dlr.Price * 100}");
+        var rep = new Report();
+        rep.ProcessEmployee(emps, "bigger than 60000 ", (e) => e.TotalSales > 60000m);
+        rep.ProcessEmployee(emps, "bigger than or equal 30000 and less than 60000", (e) => e.TotalSales >= 30000m && e.TotalSales < 60000m);
+        rep.ProcessEmployee(emps, "less than 30000 ", (e) => e.TotalSales < 30000m);
+        Console.ReadKey();
+
+
     }
 }
